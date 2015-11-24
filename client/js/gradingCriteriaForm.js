@@ -12,8 +12,6 @@
 // 	});
 // });
 
-
-
 if (Meteor.isClient){
 	Meteor.startup(function() {
 	console.log("Start up")
@@ -33,6 +31,7 @@ if (Meteor.isClient){
 			}	
 			else{
 				$('#percentage-error').hide()
+				window.location.href = "/assignmentForm";
 			}
         console.log(homeworkPercent);
 
