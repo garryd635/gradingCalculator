@@ -1,9 +1,13 @@
 <template name="gradingCriteriaForm">
 	<div class="container">
-<!-- 		<div class="form-group">
-			<div class="alert alert-danger" role="alert" id="percentage-error">Your Grading Criteria Does Not equal 100%, Check your Percentages</div>
-		</div> -->
 
+		<div class="form-group" id="percentage-error">
+			<div class="alert alert-danger" role="alert" >Your Grading Criteria Does Not equal 100%, Check your Percentages</div>
+		</div>
+
+		<script>
+			$('#percentage-error').hide()
+		</script>
 		<div class="form-group">
 			<p>Enter Grading Criteria</p>
 			<label class="control-label">Homework</label>
