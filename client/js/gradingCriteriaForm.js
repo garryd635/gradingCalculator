@@ -27,6 +27,7 @@ if (Meteor.isClient){
 			if(total != 100){
 				console.log("Not 100%")
 				console.log(total)
+				$('#percentage-error percentage-text').html(total)
 				$('#percentage-error').fadeIn("slow")
 			}	
 			else{
