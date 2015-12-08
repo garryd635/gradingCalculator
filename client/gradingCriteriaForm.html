@@ -12,25 +12,69 @@
 		<div class= jumbotron>
 			<div class="container">
 				<h1>The Grading Calculator</h1>
-				<p>Select the "New Student" button to get started</p>
+				<p>Enter Grading Criteria</p>
 			</div>
 		</div>
 
 		<div class="form-group">
-			<p>Enter Grading Criteria</p>
-			<label class="control-label">Homework</label>
+			<h4>Select your Assignment Types</h4>
+			<div class="checkbox">
+				<label><input type="checkbox" id="hw-checkbox" value="homework">Homework</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="quiz-checkbox" value="quiz">Quiz</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="exam-checkbox" value="exam">Exam</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="midterm-checkbox" value="midterm">Midterm</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="final-checkbox" value="final">Final</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="other1-checkbox" value="other1">Other 1</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="other2-checkbox" value="other2">Other 2</label>
+			</div>
+		</div>
+
+		<button type="button" id="update-button" class="btn btn-default">Update</button>
+
+		<div class="form-group">
+			<label class="control-label" id="homework-label">Homework</label>
 			<input type="text" class="form-control" id="homework-input" placeholder="Enter homework value">
 		</div>
 
 		<div class="form-group">
-			<label class="control-label">Quiz</label>
+			<label class="control-label" id="quiz-label">Quiz</label>
 			<input type="text" class="form-control" id="quiz-input" placeholder="Enter Quiz Value">
 		</div>
 
 		<div class="form-group">
-			<label class="control-label">Exam</label>
+			<label class="control-label" id="exam-label">Exam</label>
 			<input type="text" class="form-control" id="exam-input" placeholder="Enter Exam Value">
+		</div>	
+
+		<div class="form-group">
+			<label class="control-label" id="midterm-label">Midterm</label>
+			<input type="text" class="form-control" id="midterm-input" placeholder="Enter Quiz Value">
+		</div>
+		<div class="form-group">
+			<label class="control-label" id="final-label">Final</label>
+			<input type="text" class="form-control" id="final-input" placeholder="Enter Quiz Value">
+		</div>
+		<div class="form-group">
+			<label class="control-label" id="other1-label">Other 1</label>
+			<input type="text" class="form-control" id="other1-input" placeholder="Enter Quiz Value">
+		</div>
+		<div class="form-group">
+			<label class="control-label" id="other2-label">Other 2</label>
+			<input type="text" class="form-control" id="other2-input" placeholder="Enter Quiz Value">
+		</div>
 			<button type="button" class="btn btn-default" id="submit-button">Submit<span></span></button>
-	</div>
+	
 </div>
 </template>
