@@ -42,7 +42,7 @@ Template.gradingCriteriaForm.events({
 				if(homeworkPercent != 0){
 					gradeCollection.insert({
 						type: "percentage",
-						name:"Homework",
+						name:"homework",
 						percent: homeworkPercent
 					})
 				}
@@ -75,7 +75,7 @@ Template.gradingCriteriaForm.events({
 					gradeCollection.insert({
 						type: "percentage",
 						name: "final",
-						percent: midtermPercent
+						percent: finalPercent
 					})
 				}
 

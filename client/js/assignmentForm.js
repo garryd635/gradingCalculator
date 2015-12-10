@@ -159,32 +159,41 @@ if(Meteor.isClient){
 
 			if(hwCounter > 0){
 				focus.push("homework")
+				console.log("homework pushed")
 			}
 			if(quizCounter > 0){
 				focus.push("quiz")
+				console.log("quiz pushed")
 			}
 			if(examCounter > 0){
 				focus.push("exam")
+				console.log("exam pushed")
 			}
 			if(midtermCounter > 0){
 				focus.push("midterm")
+				console.log("midterm pushed")
 			}
 			if(finalCounter > 0){
 				focus.push("final")
+				console.log("final pushed")
 			}
 			if(other1Counter> 0){
 				focus.push("other1")
+				console.log("other1 pushed")
 			}
 			if(other2Counter > 0){
 				focus.push("other2")
+				console.log("other2 pushed")
 			}
 
+			console.log(focus)
 			for (var i = 0; i < focus.length; i++) {
-				var temp = gradeCollection.find({type:focus[i]})
+				var temp = gradeCollection.find({type:focus[i]}).fetch()
+				console.log(temp)
 				for(var k = 0; k < temp.length; k++){
 					if(focus[i] == "homework"){
 					 hwTotal += temp[k].grade
-					 console.log("For:" + k)
+					 console.log(hwTotal)
 					}
 					if(focus[i] == "quiz"){
 						quizTotal += temp[k].grade
@@ -208,37 +217,47 @@ if(Meteor.isClient){
 
 				if(focus[i] == "homework"){
 					 hwAvg = hwTotal/parseInt(temp.length)
-					 var critPercent = gradeCollection.find({name:focus[i]})
+					 var objectGet = gradeCollection.find({name:focus[i]}).fetch()
+					 var critPercent = objectGet[0].percent
+					 console.log(critPercent +"%")
 					 hwNum = (hwAvg *(critPercent/100))
+					 console.log("final hw: " + hwNum)
 					}
 					if(focus[i] == "quiz"){
 						quizAvg = quizTotal/parseInt(temp.length)
-						var critPercent = gradeCollection.find({name:focus[i]})
+						var objectGet = gradeCollection.find({name:focus[i]}).fetch()
+						var critPercent = objectGet[0].percent
 						quizNum = (quizAvg *(critPercent/100))
+						console.log("final quiz: " + quizNum)
 					}
 					if(focus[i] == "exam"){
 						examAvg =	examTotal/parseInt(temp.length)
-						var critPercent = gradeCollection.find({name:focus[i]})
+						var objectGet = gradeCollection.find({name:focus[i]}).fetch()
+						var critPercent = objectGet[0].percent
 						examNum = (examAvg *(critPercent/100)) 
 					}
 					if(focus[i] == "midterm"){
 						midtermAvg =  midtermTotal/parseInt(temp.length)
-						var critPercent = gradeCollection.find({name:focus[i]})
+						var objectGet = gradeCollection.find({name:focus[i]}).fetch()
+						var critPercent = objectGet[0].percent
 						midtermNum = (midtermAvg *(critPercent/100))
 					}
 					if(focus[i] == "final"){
 						finalAvg =  finalTotal/parseInt(temp.length)
-						var critPercent = gradeCollection.find({name:focus[i]})
+						var objectGet = gradeCollection.find({name:focus[i]}).fetch()
+						var critPercent = objectGet[0].percent
 						finalNum = (finalAvg *(critPercent/100))
 					}
 					if(focus[i] == "other1"){
 						other1Avg =  other1Total/parseInt(temp.length)
-						var critPercent = gradeCollection.find({name:focus[i]})
+						var objectGet = gradeCollection.find({name:focus[i]}).fetch()
+						var critPercent = objectGet[0].percent
 						other1Num = (other1Avg *(critPercent/100))
 					}
 					if(focus[i] == "other2"){
 						other2Avg =  other2Total/parseInt(temp.length)
-						var critPercent = gradeCollection.find({name:focus[i]})
+						var objectGet = gradeCollection.find({name:focus[i]}).fetch()
+						var critPercent = objectGet[0].percent
 						other2Num = (other2Avg *(critPercent/100))
 					}
 
