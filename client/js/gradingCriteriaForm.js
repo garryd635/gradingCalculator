@@ -1,38 +1,12 @@
-// Meteor.startup(function() {
-// 	$('#percentage-error').hide()
-// 	$('#submit-button').click(function(event) {
-// 	event.preventDefault();
-// 	// var homeworkPercent = $('#homework-input').val()
-// 	// var quizPercent = $('#quiz-input').val()
-// 	// var examPercent = $('#exam-input').val()
-
-// 	// if((homeworkPercent + quizPercent + examPercent) == 100){
-// 	// 	$('#percentage-error').fadeIn("slow")
-// 	// }	
-// 	});
-// });
 
 if (Meteor.isClient){
 	Meteor.startup(function() {
+		
 	console.log("Start up")
 });
 	
 Template.gradingCriteriaForm.onRendered( function(){
-	// $('#homework-input').hide()
-	// $('#quiz-input').hide()
-	// $('#exam-input').hide()
-	// $('#midterm-input').hide()
-	// $('#final-input').hide()
-	// $('#other1-input').hide()
-	// $('#other2-input').hide()
 
-	// $('#homework-label').hide()
-	// $('#quiz-label').hide()
-	// $('#exam-label').hide()
-	// $('#midterm-label').hide()
-	// $('#final-label').hide()
-	// $('#other1-label').hide()
-	// $('#other2-label').hide()
 })
 
 Template.gradingCriteriaForm.events({	
@@ -48,10 +22,17 @@ Template.gradingCriteriaForm.events({
 			var finalPercent = parseInt($('#final-input').val())
 			var other1Percent = parseInt($('#other1-input').val())
 			var other2Percent = parseInt($('#other2-input').val())
+			var total = 0
 
-			var total = (homeworkPercent+quizPercent+examPercent+midtermPercent+
-				finalPercent+other1Percent+other2Percent)
-			console.log(total);
+			percentArr = [homeworkPercent,quizPercent,examPercent,midtermPercent, finalPercent, other1Percent,other2Percent]
+
+			for (var i = 0; i < percentArr.length; i++) {
+				if (percentArr[i] != 0){
+					total += percentArr[i]
+				}
+			};
+
+			console.log(percentArr);
 
 			if(total != 100){
 				console.log("Not 100%")
@@ -62,50 +43,67 @@ Template.gradingCriteriaForm.events({
 			else{
 				$('#percentage-error').hide()
 
-				var criteria = [
-				{
-					name: "hwPercent",
-					percentage: homeworkPercent
+				if(homeworkPercent != 0){
+					gradeCollection.insert({
+						type: "percentage",
+						name:"Homework",
+						percent: homeworkPercent
+					})
+				}
 
-				},
-					
-						{
-							name: "quizPercent",
-						percentage: quizPercent
-					},
+				if(quizPercent != 0){
+					gradeCollection.insert({
+						type: "percentage",
+						name:"quiz",
+						percent: quizPercent
+					})
+				}
 
-					 {
-					 	name: "examPercent",
-						percentage: examPercent
-					 },
-						
-					 {
-					 	name: "midtermPercent",
-						percentage: midtermPercent
-					 },
-					  {
-					  name: "finalPercent",
-						percentage: finalPercent	
-					  },
-						
-					  {
-					  	name: "other1Percent",
-						percentage: other1Percent
-					  },
+				if(examPercent != 0){
+					gradeCollection.insert({
+						type: "percentage",
+						name:"exam",
+						percent: examPercent
+					})
+				}
 
-					  {
-					  	name: "other2Percent",
-						percentage: other2Percent
-					  }			
-				];
-				
-				_.each(criteria, function(grades){
-					gradeCollection.insert(grades)
-				});
+				if(midtermPercent != 0){
+					gradeCollection.insert({
+						type: "percentage",
+						name:"midterm",
+						percent: midtermPercent
+					})
+				}
 
-				window.location.href = "/assignmentForm";
+				if(finalPercent != 0){
+					gradeCollection.insert({
+						type: "percentage",
+						name: "final",
+						percent: midtermPercent
+					})
+				}
+
+				if(other1Percent != 0){
+					gradeCollection.inset({
+						type: "percentage",
+						name:"other1",
+						percent: other1Percent
+					})
+				}
+
+				if(other2Percent != 0){
+					gradeCollection.inset({
+						type: "percentage",
+						name:"other2",
+						percent: other2Percent
+					})
+				}
 			}
-
+			window.location.href = "/assignmentForm";
     }
 	})	
+
+	Template.assignmentForm.onRendered(function(){
+		console.log(percentArr[1])
+	})
 }
