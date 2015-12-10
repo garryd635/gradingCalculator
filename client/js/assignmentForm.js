@@ -265,6 +265,13 @@ if(Meteor.isClient){
 			var absolutePercent = (hwNum + quizNum + examNum
 				+ midtermNum + finalNum + other1Num + other2Num)
 			console.log("percent" + absolutePercent)
+
+			$('#score span').html(" "+absolutePercent + "%")
+			$('#results-modal').modal()
+		},
+		'click #restart-button': function(events){
+			$('results-modal').hide()
+			window.location.href = "/"
 		}
 	})
 }
