@@ -1,9 +1,5 @@
 
 if (Meteor.isClient){
-	Meteor.startup(function() {
-		
-	console.log("Start up")
-});
 	
 Template.gradingCriteriaForm.onRendered( function(){
 
@@ -102,8 +98,4 @@ Template.gradingCriteriaForm.events({
 			window.location.href = "/assignmentForm";
     }
 	})	
-
-	Template.assignmentForm.onRendered(function(){
-		console.log(percentArr[1])
-	})
 }
