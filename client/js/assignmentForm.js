@@ -7,6 +7,12 @@ if(Meteor.isClient){
 		 other1Counter = 0;
 		 other2Counter = 0;
 
+
+$(document).ready(function () {
+    $('#hw-div').fadeIn(1000).removeClass('hidden');
+});
+			$('#hw-div').fadeIn("slow");
+
 	Template.assignmentForm.events({
 		
 		'click #hw-submit': function(events){

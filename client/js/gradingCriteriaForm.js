@@ -2,7 +2,7 @@
 if (Meteor.isClient){
 	
 Template.gradingCriteriaForm.onRendered( function(){
-
+	
 })
 
 Template.gradingCriteriaForm.events({	
@@ -18,6 +18,7 @@ Template.gradingCriteriaForm.events({
 			var finalPercent = parseInt($('#final-input').val());
 			var other1Percent = parseInt($('#other1-input').val());
 			var other2Percent = parseInt($('#other2-input').val());
+			var empty = false;
 			var total = 0;
 
 			percentArr = [homeworkPercent,quizPercent,examPercent,midtermPercent, finalPercent, other1Percent,other2Percent];
@@ -80,7 +81,7 @@ Template.gradingCriteriaForm.events({
 				}
 
 				if(other1Percent != 0){
-					gradeCollection.inset({
+					gradeCollection.insert({
 						type: "percentage",
 						name:"other1",
 						percent: other1Percent
