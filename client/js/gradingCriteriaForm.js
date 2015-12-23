@@ -89,7 +89,7 @@ Template.gradingCriteriaForm.events({
 				}
 
 				if(other2Percent != 0){
-					gradeCollection.inset({
+					gradeCollection.insert({
 						type: "percentage",
 						name:"other2",
 						percent: other2Percent
