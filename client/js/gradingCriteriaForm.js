@@ -96,6 +96,7 @@ Template.gradingCriteriaForm.events({
 					});
 				}
 			}
+			$('#hw-div').show();
 			window.location.href = "/assignmentForm";
     }
 	})	

@@ -7,14 +7,32 @@ if(Meteor.isClient){
 		 other1Counter = 0;
 		 other2Counter = 0;
 
-
-$(document).ready(function () {
-    $('#hw-div').fadeIn(1000).removeClass('hidden');
-});
-			$('#hw-div').fadeIn("slow");
-
 	Template.assignmentForm.events({
-		
+		'click #obtain-Input' :function(events){
+			if((gradeCollection.find({name: 'homework'}).count()) > 0)
+				$('#hw-div').show();
+
+			if((gradeCollection.find({name: 'quiz'}).count()) > 0)
+				$('#quiz-div').show();
+
+			if((gradeCollection.find({name: 'exam'}).count()) > 0)
+				$('#exam-div').show();
+
+			if((gradeCollection.find({name: 'midterm'}).count()) > 0)
+				$('#midterm-div').show();
+
+			if((gradeCollection.find({name: 'final'}).count()) > 0)
+				$('#final-div').show();
+
+			if((gradeCollection.find({name: 'other1'}).count()) > 0)
+				$('#other1-div').show();
+
+			if((gradeCollection.find({name: 'other2'}).count()) > 0)
+				$('#other2-div').show();
+
+			$('#obtain-Input').hide();
+		},
+
 		'click #hw-submit': function(events){
 
 			if($('#homework-name').val() == ""){
