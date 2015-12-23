@@ -31,6 +31,7 @@ if(Meteor.isClient){
 				$('#other2-div').show();
 
 			$('#obtain-Input').hide();
+			$('#calc-grade').show();
 		},
 
 		'click #hw-submit': function(events){

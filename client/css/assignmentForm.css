@@ -1,3 +1,15 @@
 .container{
-	display:none;
+	display: none;
+}
+
+#calc-grade{
+	display: none;
+}
+.label-default{
+	position: absolute;
+	left: 0px;
+}
+
+.button-success{
+	text-align: center;
 }
