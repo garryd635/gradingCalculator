@@ -1,3 +1,4 @@
+
 if(Meteor.isClient){
 		 hwCounter = 0;
 		 quizCounter = 0;
@@ -8,6 +9,10 @@ if(Meteor.isClient){
 		 other2Counter = 0;
 
 	Template.assignmentForm.events({
+		'click .jumbotron': function(events){
+			window.location.href = '/';
+		},
+
 		'click #obtain-Input' :function(events){
 			if((gradeCollection.find({name: 'homework'}).count()) > 0)
 				$('#hw-div').show();
@@ -36,8 +41,6 @@ if(Meteor.isClient){
 
 		'click #hw-submit': function(events){
 
-			var errorMsg = "Field Required"
-
 			if($('#homework-name').val() == ""){
 				alert("*** Homework Name Required ***")
 				return
@@ -46,7 +49,10 @@ if(Meteor.isClient){
 				alert("*** Homework Grade Required ***")
 				return
 			}
-
+			if(isNaN($('#homework-grade').val())){
+				alert("*** Grade Should Be a Number ***")
+				return
+			}
 			gradeCollection.insert({
 				type:"homework",
 				name:$('#homework-name').val(),
@@ -55,7 +61,7 @@ if(Meteor.isClient){
 			hwCounter++;
 			alert($('#homework-name').val() + " added.");
 			$('#homework-name').val("");
-			$('#homework-grade').val("");
+			$('#homework-grade').val(""); 
 		},
 
 		'click #quiz-submit': function(events){
@@ -67,7 +73,10 @@ if(Meteor.isClient){
 				alert("*** Quiz Grade Required ***")
 				return
 			}
-
+			if(isNaN($('#quiz-grade').val())){
+				alert("*** Grade Should Be a Number ***")
+				return
+			}
 			gradeCollection.insert({
 				type: "quiz",
 				name:$('#quiz-name').val(),
@@ -88,7 +97,10 @@ if(Meteor.isClient){
 				alert("*** Exam Grade Required ***")
 				return
 			}
-
+			if(isNaN($('#exam-grade').val())){
+				alert("*** Grade Should Be a Number ***")
+				return
+			}
 			gradeCollection.insert({
 				type: "exam",
 				name:$('#exam-name').val(),
@@ -108,6 +120,10 @@ if(Meteor.isClient){
 			}
 			if($('#midterm-grade').val() == ""){
 				alert("*** Midterm Grade Required ***")
+				return
+			}
+			if(isNaN($('#midterm-grade').val())){
+				alert("*** Grade Should Be a Number ***")
 				return
 			}
 
@@ -131,8 +147,12 @@ if(Meteor.isClient){
 				alert("*** Final Grade Required ***")
 				return
 			}
+			if(isNaN($('#final-grade').val())){
+				alert("*** Grade Should Be a Number ***")
+				return
+			}
 
-				gradeCollection.insert({
+			gradeCollection.insert({
 				type: "final",
 				name:$('#final-name').val(),
 				grade:parseInt($('#final-grade').val())
@@ -149,6 +169,10 @@ if(Meteor.isClient){
 			}
 			if($('#other1-grade').val() == ""){
 				alert("*** Other1 Grade Required ***");
+				return
+			}
+			if(isNaN($('#other1-grade').val())){
+				alert("*** Grade Should Be a Number ***")
 				return
 			}
 			gradeCollection.insert({
@@ -171,7 +195,10 @@ if(Meteor.isClient){
 				alert("*** Other2 Grade Required ***");
 				return
 			}
-
+			if(isNaN($('#other2-grade').val())){
+				alert("*** Grade Should Be a Number ***")
+				return
+			}
 			gradeCollection.insert({
 				type: "other2",
 				name:$('#other2-name').val(),
@@ -215,34 +242,25 @@ if(Meteor.isClient){
 
 			if(hwCounter > 0){
 				focus.push("homework");
-				console.log("homework pushed");
 			}
 			if(quizCounter > 0){
 				focus.push("quiz");
-				console.log("quiz pushed");
 			}
 			if(examCounter > 0){
 				focus.push("exam");
-				console.log("exam pushed");
 			}
 			if(midtermCounter > 0){
 				focus.push("midterm");
-				console.log("midterm pushed");
 			}
 			if(finalCounter > 0){
 				focus.push("final");
-				console.log("final pushed");
 			}
 			if(other1Counter> 0){
 				focus.push("other1");
-				console.log("other1 pushed");
 			}
 			if(other2Counter > 0){
 				focus.push("other2");
-				console.log("other2 pushed");
 			}
-
-			console.log(focus);
 
 			//--For Loop for Adding up total assignment percentage
 			for (var i = 0; i < focus.length; i++) {
@@ -318,8 +336,7 @@ if(Meteor.isClient){
 
 			var absolutePercent = (hwNum + quizNum + examNum
 				+ midtermNum + finalNum + other1Num + other2Num);
-			console.log("percent" + absolutePercent);
-
+			
 			$('#score span').html(" "+absolutePercent + "%");
 			$('#results-modal').modal();
 		},

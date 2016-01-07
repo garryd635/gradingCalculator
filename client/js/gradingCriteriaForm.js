@@ -6,11 +6,43 @@ Template.gradingCriteriaForm.onRendered( function(){
 })
 
 Template.gradingCriteriaForm.events({	
-			'click #update-button' : function(){
+		 'click .jumbotron' : function(events){
+		 		window.location.href = "/";
+		 },
 
-			},
+		 'click #submit-button': function(events){
 
-		 'click #submit-button': function(){
+		 	if(isNaN($('#homework-input').val())){
+				alert("*** Percentage Should Be a Number ***")
+				return
+			}
+			if(isNaN($('#quiz-input').val())){
+				alert("*** Percentage Should Be a Number ***")
+				return
+			}
+			if(isNaN($('#exam-input').val())){
+				alert("*** Percentage Should Be a Number ***")
+				return
+			}
+			if(isNaN($('#midterm-input').val())){
+				alert("*** Percentage Should Be a Number ***")
+				return
+			}
+			if(isNaN($('#final-input').val())){
+				alert("*** Percentage Should Be a Number ***")
+				return
+			}
+			if(isNaN($('#other1-input').val())){
+				alert("*** Percentage Should Be a Number ***")
+				return
+			}
+
+			if(isNaN($('#other2-input').val())){
+				alert("*** Percentage Should Be a Number ***")
+				return
+			}
+
+
 		 	var homeworkPercent = parseInt($('#homework-input').val());
 		 	var quizPercent = parseInt($('#quiz-input').val());
 			var examPercent = parseInt($('#exam-input').val());
@@ -32,8 +64,6 @@ Template.gradingCriteriaForm.events({
 			console.log(percentArr);
 
 			if(total != 100){
-				console.log("Not 100%");
-				console.log(total);
 				$('#percentage-error percentage-text').html(total);
 				$('#percentage-error').fadeIn("slow");
 				return
