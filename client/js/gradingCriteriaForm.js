@@ -36,6 +36,7 @@ Template.gradingCriteriaForm.events({
 				console.log(total);
 				$('#percentage-error percentage-text').html(total);
 				$('#percentage-error').fadeIn("slow");
+				return
 			}	
 			else{
 				$('#percentage-error').hide();

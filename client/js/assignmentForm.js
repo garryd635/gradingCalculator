@@ -36,11 +36,18 @@ if(Meteor.isClient){
 
 		'click #hw-submit': function(events){
 
+			var errorMsg = "Field Required"
+
 			if($('#homework-name').val() == ""){
-				console.log("Empty Name");
+				alert("*** Homework Name Required ***")
+				return
 			}
-			else{
-				gradeCollection.insert({
+			if($('#homework-grade').val() == ""){
+				alert("*** Homework Grade Required ***")
+				return
+			}
+
+			gradeCollection.insert({
 				type:"homework",
 				name:$('#homework-name').val(),
 				grade:parseInt($('#homework-grade').val())
@@ -49,15 +56,19 @@ if(Meteor.isClient){
 			alert($('#homework-name').val() + " added.");
 			$('#homework-name').val("");
 			$('#homework-grade').val("");
-			}	
 		},
 
 		'click #quiz-submit': function(events){
 			if($('#quiz-name').val() == ""){
-				console.log("Empty Name");
+				alert("*** Quiz Name Required ***")
+				return
 			}
-			else{
-				gradeCollection.insert({
+			if($('#quiz-grade').val() == ""){
+				alert("*** Quiz Grade Required ***")
+				return
+			}
+
+			gradeCollection.insert({
 				type: "quiz",
 				name:$('#quiz-name').val(),
 				grade:parseInt($('#quiz-grade').val())
@@ -66,15 +77,19 @@ if(Meteor.isClient){
 			alert($('#quiz-name').val() + " added.");
 			$('#quiz-name').val("");
 			$('#quiz-grade').val("");
-			}
-			
 		},
+
 		'click #exam-submit': function(events){
 			if($('#exam-name').val() == ""){
-				console.log("Empty Name");
+				alert("*** Exam Name Required ***")
+				return
 			}
-			else{
-				gradeCollection.insert({
+			if($('#exam-grade').val() == ""){
+				alert("*** Exam Grade Required ***")
+				return
+			}
+
+			gradeCollection.insert({
 				type: "exam",
 				name:$('#exam-name').val(),
 				grade:parseInt($('#exam-grade').val())
@@ -83,31 +98,40 @@ if(Meteor.isClient){
 				alert($('#exam-name').val() + " added.");
 				$('#exam-name').val("");
 				$('#exam-grade').val("");
-			}
 			
 		},
+
 		'click #midterm-submit': function(events){
 			if($('#midterm-name').val() == ""){
-				console.log("Empty Name");
+				alert("*** Midterm Name Required ***")
+				return
 			}
-			else{
-				gradeCollection.insert({
+			if($('#midterm-grade').val() == ""){
+				alert("*** Midterm Grade Required ***")
+				return
+			}
+
+			gradeCollection.insert({
 				type: "midterm",
 				name:$('#midterm-name').val(),
 				grade:parseInt($('#midterm-grade').val())
 			});
-				midtermCounter++;
-				alert($('#midterm-name').val() + " added.");
-				$('#midterm-name').val("");
-				$('#midterm-grade').val("");
-			}
-			
+
+			midtermCounter++;
+			alert($('#midterm-name').val() + " added.");
+			$('#midterm-name').val("");
+			$('#midterm-grade').val("");			
 		},
 		'click #final-submit': function(events){
 			if($('#final-name').val() == ""){
-				console.log("Empty Name");
+				alert("*** Final Name Required ***")
+				return
 			}
-			else{
+			if($('#final-grade').val() == ""){
+				alert("*** Final Grade Required ***")
+				return
+			}
+
 				gradeCollection.insert({
 				type: "final",
 				name:$('#final-name').val(),
@@ -117,41 +141,48 @@ if(Meteor.isClient){
 				alert($('#final-name').val() + " added.");
 				$('#final-name').val("");
 				$('#final-grade').val("");
-			}
-			
 		},
 		'click #other1-submit': function(events){
 			if($('#other1-name').val() == ""){
-				console.log("Empty Name");
+				alert("*** Other1 Name Required ***");
+				return
 			}
-			else{
-				gradeCollection.insert({
+			if($('#other1-grade').val() == ""){
+				alert("*** Other1 Grade Required ***");
+				return
+			}
+			gradeCollection.insert({
 				type: "other1",
 				name:$('#other1-name').val(),
 				grade:parseInt($('#other1-grade').val())
 			});
+
 				other1Counter++
 				alert($('#other1-name').val() + " added.");
 				$('#other1-name').val("");
 				$('#other1-grade').val("");
-			}
-			
 		},
 		'click #other2-submit': function(events){
 			if($('#other2-name').val() == ""){
-				console.log("Empty Name");
+				alert("*** Other2 Name Required ***");
+				return
 			}
-			else{
-				gradeCollection.insert({
+			if($('#other2-grade').val() == ""){
+				alert("*** Other2 Grade Required ***");
+				return
+			}
+
+			gradeCollection.insert({
 				type: "other2",
 				name:$('#other2-name').val(),
 				grade:parseInt($('#other2-grade').val())
 			});
-				other2Counter++;
-				alert($('#other2-name').val() + " added.");
-				$('#other2-name').val("");
-				$('#other2-grade').val("");
-			}
+
+			other2Counter++;
+			alert($('#other2-name').val() + " added.");
+			$('#other2-name').val("");
+			$('#other2-grade').val("");
+
 			
 		},
 
