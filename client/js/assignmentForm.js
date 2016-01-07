@@ -240,28 +240,37 @@ if(Meteor.isClient){
 			var other1Avg = 0;
 			var other2Avg = 0;
 
-			if(hwCounter > 0){
+			if(gradeCollection.find({name:"homework"}).count() > 0){
 				focus.push("homework");
+				if(gradeCollection.find({type:"homework"}).count() == 0){
+					gradeCollection.insert({
+						type: "homework",
+						name: "Assumption",
+						grade: "100"
+					})
+				}
 			}
-			if(quizCounter > 0){
+
+			if(gradeCollection.find({name: "quiz"}).count() > 0){
 				focus.push("quiz");
 			}
-			if(examCounter > 0){
+			if(gradeCollection.find({name: "exam"}).count() > 0){
 				focus.push("exam");
 			}
-			if(midtermCounter > 0){
+			if(gradeCollection.find({name: "midterm"}).count() > 0){
 				focus.push("midterm");
 			}
-			if(finalCounter > 0){
+			if(gradeCollection.find({name: "final"}).count() > 0){
 				focus.push("final");
 			}
-			if(other1Counter> 0){
+			if(gradeCollection.find({name: "other1"}).count() > 0){
 				focus.push("other1");
 			}
-			if(other2Counter > 0){
+			if(gradeCollection.find({name: "other2"}).count() > 0){
 				focus.push("other2");
 			}
 
+			console.log(focus)
 			//--For Loop for Adding up total assignment percentage
 			for (var i = 0; i < focus.length; i++) {
 				var temp = gradeCollection.find({type:focus[i]}).fetch();
