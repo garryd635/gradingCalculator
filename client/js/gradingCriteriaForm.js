@@ -1,9 +1,4 @@
-
 if (Meteor.isClient){
-	
-Template.gradingCriteriaForm.onRendered( function(){
-	
-})
 
 Template.gradingCriteriaForm.events({	
 		 'click .jumbotron' : function(events){
@@ -60,8 +55,6 @@ Template.gradingCriteriaForm.events({
 					total += percentArr[i];
 				}
 			};
-
-			console.log(percentArr);
 
 			if(total != 100){
 				$('#percentage-error percentage-text').html(total);
