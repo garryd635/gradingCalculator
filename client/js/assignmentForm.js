@@ -1,13 +1,5 @@
 
 if(Meteor.isClient){
-		 hwCounter = 0;
-		 quizCounter = 0;
-		 examCounter = 0;
-		 midtermCounter = 0;
-		 finalCounter = 0;
-		 other1Counter = 0;
-		 other2Counter = 0;
-
 	Template.assignmentForm.events({
 		'click .jumbotron': function(events){
 			window.location.href = '/';
@@ -53,13 +45,15 @@ if(Meteor.isClient){
 				alert("*** Grade Should Be a Number ***")
 				return
 			}
+			var name = $('#homework-name').val();
+			var grade = parseInt($('#homework-grade').val())
 			gradeCollection.insert({
 				type:"homework",
-				name:$('#homework-name').val(),
-				grade:parseInt($('#homework-grade').val())
+				name: name,
+				grade:grade
 			});
-			hwCounter++;
-			alert($('#homework-name').val() + " added.");
+			$('#hw-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+
 			$('#homework-name').val("");
 			$('#homework-grade').val(""); 
 		},
@@ -77,13 +71,16 @@ if(Meteor.isClient){
 				alert("*** Grade Should Be a Number ***")
 				return
 			}
+
+			var name = $('#quiz-name').val()
+			var grade = parseInt($('#quiz-grade').val())
 			gradeCollection.insert({
 				type: "quiz",
-				name:$('#quiz-name').val(),
-				grade:parseInt($('#quiz-grade').val())
+				name: name,
+				grade: grade
 			});
-			quizCounter++;
-			alert($('#quiz-name').val() + " added.");
+
+			$('#quiz-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
 			$('#quiz-name').val("");
 			$('#quiz-grade').val("");
 		},
@@ -101,13 +98,16 @@ if(Meteor.isClient){
 				alert("*** Grade Should Be a Number ***")
 				return
 			}
+			var name = $('#exam-name').val()
+			var grade = parseInt($('#exam-grade').val())
+
 			gradeCollection.insert({
 				type: "exam",
-				name:$('#exam-name').val(),
-				grade:parseInt($('#exam-grade').val())
+				name:name,
+				grade:grade
 			});
-				examCounter++;
-				alert($('#exam-name').val() + " added.");
+
+				$('#exam-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
 				$('#exam-name').val("");
 				$('#exam-grade').val("");
 			
@@ -127,14 +127,16 @@ if(Meteor.isClient){
 				return
 			}
 
+			var name = $('#midterm-name').val()
+			var grade = parseInt($('#midterm-grade').val())
+
 			gradeCollection.insert({
 				type: "midterm",
-				name:$('#midterm-name').val(),
-				grade:parseInt($('#midterm-grade').val())
+				name: name,
+				grade: grade
 			});
 
-			midtermCounter++;
-			alert($('#midterm-name').val() + " added.");
+			$('#midterm-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
 			$('#midterm-name').val("");
 			$('#midterm-grade').val("");			
 		},
@@ -152,13 +154,16 @@ if(Meteor.isClient){
 				return
 			}
 
+			var name = $('#final-name').val()
+			var grade = parseInt($('#final-grade').val())
+
 			gradeCollection.insert({
 				type: "final",
-				name:$('#final-name').val(),
-				grade:parseInt($('#final-grade').val())
+				name: name,
+				grade: grade
 			});
-				finalCounter++;
-				alert($('#final-name').val() + " added.");
+				
+				$('#final-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
 				$('#final-name').val("");
 				$('#final-grade').val("");
 		},
@@ -175,14 +180,17 @@ if(Meteor.isClient){
 				alert("*** Grade Should Be a Number ***")
 				return
 			}
+			var name = $('#other1-name').val()
+			var grade = parseInt($('#other1-grade').val())
+
 			gradeCollection.insert({
 				type: "other1",
-				name:$('#other1-name').val(),
-				grade:parseInt($('#other1-grade').val())
+				name: name,
+				grade: grade
 			});
 
-				other1Counter++
-				alert($('#other1-name').val() + " added.");
+				
+				$('#other1-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
 				$('#other1-name').val("");
 				$('#other1-grade').val("");
 		},
@@ -199,18 +207,17 @@ if(Meteor.isClient){
 				alert("*** Grade Should Be a Number ***")
 				return
 			}
+			var name = $('#other2-name').val()
+			var grade = parseInt($('#other2-grade').val())
 			gradeCollection.insert({
 				type: "other2",
-				name:$('#other2-name').val(),
-				grade:parseInt($('#other2-grade').val())
+				name: name,
+				grade: grade
 			});
 
-			other2Counter++;
-			alert($('#other2-name').val() + " added.");
+			$('#other2-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
 			$('#other2-name').val("");
 			$('#other2-grade').val("");
-
-			
 		},
 
 		'click #calc-grade': function(events){
