@@ -33,4 +33,4 @@
   Next Steps:
   
       1. Implementing a way of generating a list of stored assignments.
-      2. Have the assignments displayed 
+      2. Have the assignments displayed directly from the db.
