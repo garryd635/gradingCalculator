@@ -1,5 +1,7 @@
 
 if(Meteor.isClient){
+	
+	
 	Template.assignmentForm.events({
 		'click .jumbotron': function(events){
 			window.location.href = '/';
@@ -260,21 +262,63 @@ if(Meteor.isClient){
 
 			if(gradeCollection.find({name: "quiz"}).count() > 0){
 				focus.push("quiz");
+				if(gradeCollection.find({type:"quiz"}).count() == 0){
+					gradeCollection.insert({
+						type: "quiz",
+						name: "Assumption",
+						grade: "100"
+					})
+				}
 			}
 			if(gradeCollection.find({name: "exam"}).count() > 0){
 				focus.push("exam");
+				if(gradeCollection.find({type:"exam"}).count() == 0){
+					gradeCollection.insert({
+						type: "exam",
+						name: "Assumption",
+						grade: "100"
+					})
+				}
 			}
 			if(gradeCollection.find({name: "midterm"}).count() > 0){
 				focus.push("midterm");
+				if(gradeCollection.find({type:"midterm"}).count() == 0){
+					gradeCollection.insert({
+						type: "midterm",
+						name: "Assumption",
+						grade: "100"
+					})
+				}
 			}
 			if(gradeCollection.find({name: "final"}).count() > 0){
 				focus.push("final");
+				if(gradeCollection.find({type:"final"}).count() == 0){
+					gradeCollection.insert({
+						type: "final",
+						name: "Assumption",
+						grade: "100"
+					})
+				}
 			}
 			if(gradeCollection.find({name: "other1"}).count() > 0){
 				focus.push("other1");
+				if(gradeCollection.find({type:"other1"}).count() == 0){
+					gradeCollection.insert({
+						type: "other1",
+						name: "Assumption",
+						grade: "100"
+					})
+				}
 			}
 			if(gradeCollection.find({name: "other2"}).count() > 0){
 				focus.push("other2");
+				if(gradeCollection.find({type:"other2"}).count() == 0){
+					gradeCollection.insert({
+						type: "other2",
+						name: "Assumption",
+						grade: "100"
+					})
+				}
 			}
 
 			console.log(focus)
