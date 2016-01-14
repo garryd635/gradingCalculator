@@ -34,4 +34,4 @@
   
       1. Have the assignments displayed directly from the db.
       2. Let the user delete assignments.
-      3. Let the user 
+      3. Let the user go back to previous grade weight form to change grade weights.
