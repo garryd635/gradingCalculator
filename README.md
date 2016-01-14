@@ -10,8 +10,9 @@
   Purpose:
   
       The purpose of the grading calculator is to allow students to be able to quickly 
-    know the estimate of their overall grade in a class/course.  The grading calculator
-    was created as an individual project for A100.
+    know the estimate of their overall grade in a class/course.  The application is targeted 
+    towards students, whether they're college students, high school students, or even middle school
+    students. The grading calculator was created as an individual project for A100.
     
   
   Running the Project:
@@ -27,10 +28,10 @@
     inputs named 'other' to assigned grades to assignment types not listed.  There are also inputs to put the 
     names and grades for assignment types with grade weights that already exists.
     
-      The application does not have a way of displaying grading weights and assignments that would be entered to allow 
-    users to visibly see their grade weights and assignments before calculating them. 
+      The application also displays the assignments entered, but does not directly get it from the database realtime or        allow the user to delete the assignments due to a mistake. 
   
   Next Steps:
   
-      1. Implementing a way of generating a list of stored assignments.
-      2. Have the assignments displayed directly from the db.
+      1. Have the assignments displayed directly from the db.
+      2. Let the user delete assignments.
+      3. Let the user 
