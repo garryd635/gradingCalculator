@@ -321,8 +321,15 @@ if(Meteor.isClient){
 				}
 			}
 
-			console.log(focus)
-			//--For Loop for Adding up total assignment percentage
+
+			/**
+				Going through each assignment type in the focus array and storing all assignments of the 
+				current focus assignment type into an array called temp.  From there it will start another the inner for-loop that 
+				iterate through the temp array to calculate the total of all present assignments according to the "focus" of the first for-loop
+				.  
+				For example, if focus contains [homework,quiz] and i = 0, temp will be an array of all the assignments that are type "homework"
+				 and the inner for-loop will only satify the if-statement containing "homework"
+			*/
 			for (var i = 0; i < focus.length; i++) {
 				var temp = gradeCollection.find({type:focus[i]}).fetch();
 				for(var k = 0; k < temp.length; k++){
@@ -349,6 +356,13 @@ if(Meteor.isClient){
 					}
 				}
 
+				/**
+					After adding all the assignments in the temp array, the average and grade weight will be
+					calculated.  Depending on the focus, the average will be calculated by the assignment totals
+					from the inner for-loop, retrieve the assignment type's grade weight percentage,
+					and multiply the average with the percentage to obtain a grade weight of the specific assignment
+					type.
+				*/
 				if(focus[i] == "homework"){
 					 hwAvg = hwTotal/parseInt(temp.length);
 					 var objectGet = gradeCollection.find({name:focus[i]}).fetch();
@@ -394,6 +408,7 @@ if(Meteor.isClient){
 					}
 			}//for
 
+			//Adds all grade weights to create a total percentage
 			var absolutePercent = (hwNum + quizNum + examNum
 				+ midtermNum + finalNum + other1Num + other2Num);
 			

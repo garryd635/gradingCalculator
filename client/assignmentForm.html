@@ -10,82 +10,80 @@
 		</div>
 	</div>
 
-<button type="button" class="btn btn-success" id="obtain-Input">Continue</button>
+	<button type="button" class="btn btn-success" id="obtain-Input">Continue</button>
 
-<div class="assignment-div" id="hw-div">
-	<div class="container">
-		<div class="row">
-			<div class="homework-section">
-				<label class="label label-default">Homework</label>
+	<div class="assignment-div" id="hw-div">
+		<div class="container">
+			<div class="row">
+				<div class="homework-section">
+					<label class="label label-default">Homework</label>
 					<small><label class="control-label">
 						<span class="input-title">Name:</span>
-            <small><span class="error-message"></span></small> 
-        </label></small>
-				<input type="text" class="form-group" id="homework-name">
-
-				<small><label class="control-label">
-					<span class="input-title">Grade:</span>
-          <small><span class="error-message"></span></small>
-        </label></small>
-				<input type="text" class="form-group" id="homework-grade">
-				<button class="btn btn-default" id="hw-submit">Submit</button>
+	          <small><span class="error-message"></span></small> 
+	        </label></small>
+					<input type="text" class="form-group" id="homework-name">
+					<small><label class="control-label">
+						<span class="input-title">Grade:</span>
+	          <small><span class="error-message"></span></small>
+	        </label></small>
+					<input type="text" class="form-group" id="homework-grade">
+					<button class="btn btn-default" id="hw-submit">Submit</button>
+				</div>
 			</div>
+			<table class="table" width="100px" id="hw-table">
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th>Grade</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
-		<table class="table" width="100px" id="hw-table">
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Grade</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
 	</div>
-</div>
 	
 	<div class="assignment-div" id="quiz-div">
 		<div class="container">
 			<div class="row">
-						<div class="form-group" id="quiz-section">
-							<label class="label label-default">Quiz</label>
-							<small><label class="control-label">
-								<span class="input-title">Name:</span>
-            <small><span class="error-message"></span></small> 
-          </label></small>
-							<input type="text" class="form-group" id="quiz-name">
-							<small><label class="control-label">
-								<span class="input-title">Grade:</span>
-            <small><span class="error-message"></span></small>
-          </label></small>
-							<input type="text" class="form-group" id="quiz-grade">
-							<button class="btn btn-default" id="quiz-submit">Submit</button>
-						</div>
-				</div>
-				<table class="table" width="100px" id="quiz-table">
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Grade</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-		</div>
-	</div>
-
-<div class="assignment-div" id="exam-div">
-	<div class="container">
-		<div class="row">
-				<div class="form-group" id="exam-section">
-					<label class="label label-default">Exam</label>
+				<div class="form-group" id="quiz-section">
+					<label class="label label-default">Quiz</label>
 						<small><label class="control-label">
 							<span class="input-title">Name:</span>
 	            <small><span class="error-message"></span></small> 
+          </label></small>
+					<input type="text" class="form-group" id="quiz-name">
+					<small><label class="control-label">
+						<span class="input-title">Grade:</span>
+            <small><span class="error-message"></span></small>
+          </label></small>
+					<input type="text" class="form-group" id="quiz-grade">
+					<button class="btn btn-default" id="quiz-submit">Submit</button>
+				</div>
+			</div>
+			<table class="table" width="100px" id="quiz-table">
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th>Grade</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="assignment-div" id="exam-div">
+		<div class="container">
+			<div class="row">
+				<div class="form-group" id="exam-section">
+					<label class="label label-default">Exam</label>
+						<small><label class="control-label">
+						<span class="input-title">Name:</span>
+	          <small><span class="error-message"></span></small> 
 	        </label></small>
 					<input type="text" class="form-group" id="exam-name">
-
 					<small><label class="control-label">
 						<span class="input-title">Grade:</span>
             <small><span class="error-message"></span></small>
@@ -93,31 +91,30 @@
 					<input type="text" class="form-group" id="exam-grade">
 					<button class="btn btn-default" id="exam-submit">Submit</button>
 				</div>
+			</div>
+			<table class="table" width="100px" id="exam-table">
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th>Grade</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
-		<table class="table" width="100px" id="exam-table">
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Grade</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
 	</div>
-</div>
 
-<div class="assignment-div" id="midterm-div">
-	<div class="container">
-		<div class="row">
+	<div class="assignment-div" id="midterm-div">
+		<div class="container">
+			<div class="row">
 				<div class="form-group" id="midterm-section">
 					<label class="label label-default">Midterm</label>
 						<small><label class="control-label">
-							<span class="input-title">Name:</span>
-	            <small><span class="error-message"></span></small> 
+						<span class="input-title">Name:</span>
+	          <small><span class="error-message"></span></small> 
 	        </label></small>
 					<input type="text" class="form-group" id="midterm-name">
-
 					<small><label class="control-label">
 						<span class="input-title">Grade:</span>
             <small><span class="error-message"></span></small>
@@ -125,24 +122,23 @@
 					<input type="text" class="form-group" id="midterm-grade">
 					<button class="btn btn-default" id="midterm-submit">Submit</button>
 				</div>
+			</div>
+			<table class="table" width="100px" id="midterm-table">
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th>Grade</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
-		<table class="table" width="100px" id="midterm-table">
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Grade</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-
 	</div>
-</div>
 
-<div class="assignment-div" id="final-div">
-	<div class="container">
-		<div class="row">
+	<div class="assignment-div" id="final-div">
+		<div class="container">
+			<div class="row">
 				<div class="form-group" id="final-section">
 					<label class="label label-default">Final Exam</label>
 						<small><label class="control-label">
@@ -158,24 +154,23 @@
 					<input type="text" class="form-group" id="final-grade">
 					<button class="btn btn-default" id="final-submit">Submit</button>
 				</div>
+			</div>
+			<table class="table" width="100px" id="final-table">
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th>Grade</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
-		<table class="table" width="100px" id="final-table">
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Grade</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-
 	</div>
-</div>
 
-<div class="assignment-div" id="other1-div">
-	<div class="container">
-		<div class="row">
+	<div class="assignment-div" id="other1-div">
+		<div class="container">
+			<div class="row">
 				<div class="form-group" id="other1-section">
 					<label class="label label-default">Other1</label>
 						<small><label class="control-label">
@@ -183,7 +178,6 @@
 	            <small><span class="error-message"></span></small> 
 	        </label></small>
 					<input type="text" class="form-group" id="other1-name">
-
 					<small><label class="control-label">
 						<span class="input-title">Grade:</span>
             <small><span class="error-message"></span></small>
@@ -191,24 +185,23 @@
 					<input type="text" class="form-group" id="other1-grade">
 					<button class="btn btn-default" id="other1-submit">Submit</button>
 				</div>
+			</div>
+			<table class="table" width="100px" id="other1-table">
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th>Grade</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
-		<table class="table" width="100px" id="other1-table">
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Grade</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-
 	</div>
-</div>
 
-<div class="assignment-div" id="other2-div">
-	<div class="container">
-		<div class="row">
+	<div class="assignment-div" id="other2-div">
+		<div class="container">
+			<div class="row">
 				<div class="form-group" id="other2-section">
 					<label class="label label-default">Other 2</label>
 						<small><label class="control-label">
@@ -224,20 +217,19 @@
 					<input type="text" class="form-group" id="other2-grade">
 					<button class="btn btn-default" id="other2-submit">Submit</button>
 				</div>
+			</div>
+			<table class="table" width="100px" id="other2-table">
+				<thead>
+					<tr>
+						<th>Assignment</th>
+						<th>Grade</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 		</div>
-		<table class="table" width="100px" id="other2-table">
-			<thead>
-				<tr>
-					<th>Assignment</th>
-					<th>Grade</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-
 	</div>
-</div>
 
 	<button type="button" class="btn btn-success" id="calc-grade">Calculate Grade</button>
 
