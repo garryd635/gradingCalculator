@@ -32,6 +32,12 @@ if(Meteor.isClient){
 			$('#obtain-Input').hide();
 			$('#calc-grade').show();
 		},
+		'click .btn-danger':function(events){
+			var curId = events.currentTarget.value;
+
+			gradeCollection.remove({_id:curId})
+			$(events.currentTarget).closest('tr').remove()
+		},
 
 		'click #hw-submit': function(events){
 
@@ -49,13 +55,17 @@ if(Meteor.isClient){
 			}
 			var name = $('#homework-name').val();
 			var grade = parseInt($('#homework-grade').val())
-			gradeCollection.insert({
+
+			var GradetoInsert = {
 				type:"homework",
 				name: name,
 				grade:grade
-			});
-			$('#hw-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+			}
+			btnId = gradeCollection.insert(GradetoInsert, function(err,docsInserted){
+					return docsInserted;
+				});
 
+			$('#hw-table').append('<tr><td>' + name + '</td><td>' + grade + '</td><td> <button type="button" class="btn btn-danger" value="' + btnId+'" >Delete</button></td></tr>')
 			$('#homework-name').val("");
 			$('#homework-grade').val(""); 
 		},
@@ -76,13 +86,17 @@ if(Meteor.isClient){
 
 			var name = $('#quiz-name').val()
 			var grade = parseInt($('#quiz-grade').val())
-			gradeCollection.insert({
-				type: "quiz",
-				name: name,
-				grade: grade
-			});
 
-			$('#quiz-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+			var GradetoInsert = {
+				type:"quiz",
+				name: name,
+				grade:grade
+			}
+			btnId = gradeCollection.insert(GradetoInsert, function(err,docsInserted){
+					return docsInserted;
+				});
+
+			$('#quiz-table').append('<tr><td>' + name + '</td><td>' + grade + '</td><td> <button type="button" class="btn btn-danger" value="' + btnId+'" >Delete</button></td></tr>')
 			$('#quiz-name').val("");
 			$('#quiz-grade').val("");
 		},
@@ -103,13 +117,16 @@ if(Meteor.isClient){
 			var name = $('#exam-name').val()
 			var grade = parseInt($('#exam-grade').val())
 
-			gradeCollection.insert({
-				type: "exam",
-				name:name,
+			var GradetoInsert = {
+				type:"exam",
+				name: name,
 				grade:grade
-			});
+			}
+			btnId = gradeCollection.insert(GradetoInsert, function(err,docsInserted){
+					return docsInserted;
+				});
 
-				$('#exam-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+				$('#exam-table').append('<tr><td>' + name + '</td><td>' + grade + '</td><td> <button type="button" class="btn btn-danger" value="' + btnId+'" >Delete</button></td></tr>')
 				$('#exam-name').val("");
 				$('#exam-grade').val("");
 			
@@ -132,13 +149,16 @@ if(Meteor.isClient){
 			var name = $('#midterm-name').val()
 			var grade = parseInt($('#midterm-grade').val())
 
-			gradeCollection.insert({
-				type: "midterm",
+			var GradetoInsert = {
+				type:"midterm",
 				name: name,
-				grade: grade
-			});
+				grade:grade
+			}
+			btnId = gradeCollection.insert(GradetoInsert, function(err,docsInserted){
+					return docsInserted;
+				});
 
-			$('#midterm-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+			$('#midterm-table').append('<tr><td>' + name + '</td><td>' + grade + '</td><td> <button type="button" class="btn btn-danger" value="' + btnId+'" >Delete</button></td></tr>')
 			$('#midterm-name').val("");
 			$('#midterm-grade').val("");			
 		},
@@ -159,13 +179,16 @@ if(Meteor.isClient){
 			var name = $('#final-name').val()
 			var grade = parseInt($('#final-grade').val())
 
-			gradeCollection.insert({
-				type: "final",
+			var GradetoInsert = {
+				type:"final",
 				name: name,
-				grade: grade
-			});
+				grade:grade
+			}
+			btnId = gradeCollection.insert(GradetoInsert, function(err,docsInserted){
+					return docsInserted;
+				});
 				
-				$('#final-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+				$('#final-table').append('<tr><td>' + name + '</td><td>' + grade + '</td><td> <button type="button" class="btn btn-danger" value="' + btnId+'" >Delete</button></td></tr>')
 				$('#final-name').val("");
 				$('#final-grade').val("");
 		},
@@ -185,14 +208,17 @@ if(Meteor.isClient){
 			var name = $('#other1-name').val()
 			var grade = parseInt($('#other1-grade').val())
 
-			gradeCollection.insert({
-				type: "other1",
+			var GradetoInsert = {
+				type:"other1",
 				name: name,
-				grade: grade
-			});
+				grade:grade
+			}
+			btnId = gradeCollection.insert(GradetoInsert, function(err,docsInserted){
+					return docsInserted;
+				});
 
 				
-				$('#other1-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+				$('#other1-table').append('<tr><td>' + name + '</td><td>' + grade + '</td><td> <button type="button" class="btn btn-danger" value="' + btnId+'" >Delete</button></td></tr>')
 				$('#other1-name').val("");
 				$('#other1-grade').val("");
 		},
@@ -211,13 +237,17 @@ if(Meteor.isClient){
 			}
 			var name = $('#other2-name').val()
 			var grade = parseInt($('#other2-grade').val())
-			gradeCollection.insert({
-				type: "other2",
-				name: name,
-				grade: grade
-			});
 
-			$('#other2-table').append('<tr><td>' + name + '</td><td>' + grade + '</td></tr>')
+			var GradetoInsert = {
+				type:"other2",
+				name: name,
+				grade:grade
+			}
+			btnId = gradeCollection.insert(GradetoInsert, function(err,docsInserted){
+					return docsInserted;
+				});
+
+			$('#other2-table').append('<tr><td>' + name + '</td><td>' + grade + '</td><td> <button type="button" class="btn btn-danger" value="' + btnId+'" >Delete</button></td></tr>')
 			$('#other2-name').val("");
 			$('#other2-grade').val("");
 		},
