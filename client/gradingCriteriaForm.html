@@ -8,10 +8,12 @@
 		<div class= jumbotron>
 			<div class="container-fluid">
 				<h1>Grade Weight</h1>
-				<ul>Step 1: Enter Grade Weight percentages for desired Assignment Types as a whole number (Example: 25% -> 25)</ul>
-				<ul>Step 2: Click Submit to go to the next screen.</ul>
-				<ul>**Grade Weight should equal to 100%**</ul>
+				<ul>Click the 'i' button for more infomation</ul>
 			</div>
+		</div>
+
+		<div class="info-button">
+			<i class="glyphicon glyphicon-info-sign" id="info-button"></i>
 		</div>
 
 		<div class="form-group" id="percentage-error">
@@ -51,5 +53,27 @@
 		</div>
 			<button type="button" class="btn btn-default" id="submit-button">Submit<span></span></button>
 	
-</div>
+	</div>
+	<div class="info-modal">
+			<div class="modal fade" role="dialog" id="weight-info-modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Information</h4>
+						</div>
+
+						<div class="modal-body">
+							<ul>Step 1: Enter Grade Weight percentages for desired Assignment Types as a whole number (Example: 25% -> 25)</ul>
+							<ul>Step 2: Click Submit to go to the next screen.</ul>
+							<ul>**Grade Weight should equal to 100%**</ul>
+						</div>
+
+						<div class="modal-footer">
+							<ul>Click the 'X' button on the top right of this screen to close the window</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 </template>

@@ -122,6 +122,9 @@ Template.gradingCriteriaForm.events({
 			}
 			$('#hw-div').show();
 			window.location.href = "/assignmentForm";
+    },
+    'click #info-button': function(events){
+    	$('#weight-info-modal').modal()
     }
 	})	
 }
