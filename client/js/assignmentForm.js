@@ -448,6 +448,9 @@ if(Meteor.isClient){
 		'click #restart-button': function(events){
 			$('results-modal').hide();
 			window.location.href = "/";
+		},
+		'click #info-button':function(events){
+			$('#assign-info-modal').modal();
 		}
 	})
 }

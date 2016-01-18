@@ -13,3 +13,14 @@
 .button-success{
 	text-align: center;
 }
+
+.glyphicon-info-sign{
+	cursor: pointer;
+	display: inline-block;
+	color: #004BFF;
+	font-size: 30px;
+}
+
+.info-button{
+	text-align: center;
+}
