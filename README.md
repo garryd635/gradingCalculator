@@ -1,4 +1,4 @@
-# The Grading Calculator
+# The Course Grading Calculator
 
 ##Project Description
   Features:
@@ -28,10 +28,11 @@
     inputs named 'other' to assigned grades to assignment types not listed.  There are also inputs to put the 
     names and grades for assignment types with grade weights that already exists.
     
-      The application also displays the assignments entered, but does not directly get it from the database realtime or        allow the user to delete the assignments due to a mistake. 
+      The application also displays the assignments entered, but does not directly get it from the database.
+    The program will allow you to delete assignments before calculations.  There is now a button to display
+    instructions for filling out the displayed form.
   
   Next Steps:
   
       1. Have the assignments displayed directly from the db.
-      2. Let the user delete assignments.
-      3. Let the user go back to previous grade weight form to change grade weights.
+      2. Let the user go back to previous grade weight form to change grade weights.
