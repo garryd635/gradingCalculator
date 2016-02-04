@@ -32,6 +32,12 @@
     The program will allow you to delete assignments before calculations.  There is now a button to display
     instructions for filling out the displayed form.
   
+  Known Bugs:
+  
+      Using the website for the first time, when you reach Assignments and click the continue button, the
+    assignment fields do not appear.  If this occurs, click on the top yellow jumbotron to go back and repeat
+    the process again.  It should work the second time.
+    
   Next Steps:
   
       1. Have the assignments displayed directly from the db.
