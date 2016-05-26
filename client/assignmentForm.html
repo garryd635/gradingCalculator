@@ -15,20 +15,34 @@
 
 	<div class="assignment-div" id="hw-div">
 		<div class="container">
-			<div class="row">
-				<div class="homework-section">
+			<div class="homework-section">
+				<div class="row">
 					<label class="label label-default">Homework</label>
 					<small><label class="control-label">
 						<span class="input-title">Name:</span>
 	          <small><span class="error-message"></span></small> 
 	        </label></small>
 					<input type="text" class="form-group" id="homework-name">
+				</div>
+				<div class="row">
 					<small><label class="control-label">
-						<span class="input-title">Grade:</span>
+						<span class="input-title">Grade (Percent):</span>
 	          <small><span class="error-message"></span></small>
 	        </label></small>
 					<input type="text" class="form-group" id="homework-grade">
-					<button class="btn btn-default" id="hw-submit">Submit</button>
+
+					<label> OR </label>
+
+					<small><label class="control-label">
+						<span class="input-title">Score:</span>
+           	<small><span class="error-message"></span></small>
+          </label></small>
+
+        	<input type="text" class="form-group" id="hw-score-numerator">
+        	<label>/</label>
+        	<input type="text" class="form-group" id="hw-score-denominator">
+
+					<button class="btn btn-default" id="hw-submit">Submit Homework</button>
 				</div>
 			</div>
 			<table class="table" width="100px" id="hw-table">
@@ -149,15 +163,16 @@
 						<small><label class="control-label">
 							<span class="input-title">Name:</span>
 	            <small><span class="error-message"></span></small> 
-	        </label></small>
+	        	</label></small>
 					<input type="text" class="form-group" id="final-name">
 
-					<small><label class="control-label">
-						<span class="input-title">Grade:</span>
-            <small><span class="error-message"></span></small>
-          </label></small>
+						<small><label class="control-label">
+							<span class="input-title">Grade:</span>
+            	<small><span class="error-message"></span></small>
+          	</label></small>
 					<input type="text" class="form-group" id="final-grade">
 					<button class="btn btn-default" id="final-submit">Submit</button>
+
 				</div>
 			</div>
 			<table class="table" width="100px" id="final-table">

@@ -42,15 +42,28 @@ if(Meteor.isClient){
 		'click #hw-submit': function(events){
 
 			if($('#homework-name').val() == ""){
-				alert("*** Homework Name Required ***")
+				alert("*** Homework Name Required ***");
 				return
 			}
-			if($('#homework-grade').val() == ""){
-				alert("*** Homework Grade Required ***")
+			if($('#homework-grade').val() == "" && ($('hw-score-numerator').val() == "" && $('hw-score-denominator').val() == "")){
+				alert("*** Homework Grade Required ***");
 				return
 			}
 			if(isNaN($('#homework-grade').val())){
-				alert("*** Grade Should Be a Number ***")
+				alert("*** Grade Should Be a Number ***");
+				return
+			}
+			
+			if($('#homework-grade').val() != "" && ($('hw-score-numerator').val() != "" || $('hw-score-denominator').val() != "")){
+				alert("***Grade should be either a percent or score***");
+				return
+			}
+			if($('#hw-score-numerator').val() > $('#hw-score-denominator').val()){
+				alert("***The score fraction should not be more than 1.  Please do not put extra credit***");
+				return
+			}
+			if($('#hw-score-numerator').val() <= $('#hw-score-denominator').val()){
+				alert("***Score is good*** (Not submited)");
 				return
 			}
 			var name = $('#homework-name').val();
