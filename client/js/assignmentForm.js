@@ -53,7 +53,13 @@ if(Meteor.isClient){
 				alert("*** Grade Should Be a Number ***");
 				return
 			}
-			
+
+			if($('#homework-grade').val() == "" && ((($('hw-score-numerator').val() != "" && $('hw-score-denominator').val() == "")
+				|| $('hw-score-numerator').val() == "" && $('hw-score-denominator').val() != ""))){
+				alert("***Score must have both parts***")
+				return
+			}
+
 			if($('#homework-grade').val() != "" && ($('hw-score-numerator').val() != "" || $('hw-score-denominator').val() != "")){
 				alert("***Grade should be either a percent or score***");
 				return
