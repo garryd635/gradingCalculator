@@ -54,9 +54,13 @@ if(Meteor.isClient){
 				return
 			}
 
-			if($('#homework-grade').val() == "" && ((($('hw-score-numerator').val() != "" && $('hw-score-denominator').val() == "")
-				|| $('hw-score-numerator').val() == "" && $('hw-score-denominator').val() != ""))){
-				alert("***Score must have both parts***")
+			if($('#homework-grade').val() == "" && ($('hw-score-numerator').val() != "" && $('hw-score-denominator').val() == "")){
+				alert("***Grade Fraction is missing denominator***");
+				return
+			}
+
+			if($('#homework-grade').val() == "" && ($('hw-score-numerator').val() == "" && $('hw-score-denominator').val() != "")){
+				alert("Grade Fraction is missing numerator");
 				return
 			}
 
@@ -68,8 +72,9 @@ if(Meteor.isClient){
 				alert("***The score fraction should not be more than 1.  Please do not put extra credit***");
 				return
 			}
+
 			if($('#hw-score-numerator').val() <= $('#hw-score-denominator').val()){
-				alert("***Score is good*** (Not submited)");
+				alert("***Fraction Score is good*** (Not submited)");
 				return
 			}
 			var name = $('#homework-name').val();
