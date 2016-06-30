@@ -1,3 +1,23 @@
 .homepage-color{
-	background-color: #C0C97C;
+	background-color: white;
+}
+.jumbotron .h1 .ul{
+	text-align: center;
+}
+.homepage-body{
+	background-color: #EBEBEB;
+	text-align: center;
+}
+body{
+	background-color: #EBEBEB;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  display: flex;
+  align-items: center;
+}
+
+html{
+	background-color:#EBEBEB;
 }
