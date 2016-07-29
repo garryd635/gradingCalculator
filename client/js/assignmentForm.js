@@ -4,7 +4,7 @@ if(Meteor.isClient){
 	
 	Template.assignmentForm.events({
 		'click .jumbotron': function(events){
-			window.location.href = '/';
+			window.location.href = '/index';
 		},
 
 		'click #obtain-Input' :function(events){

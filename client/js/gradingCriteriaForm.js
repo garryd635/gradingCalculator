@@ -2,7 +2,7 @@ if (Meteor.isClient){
 
 Template.gradingCriteriaForm.events({	
 		 'click .jumbotron' : function(events){
-		 		window.location.href = "/";
+		 		window.location.href = "/index";
 		 },
 
 		 'click #submit-button': function(events){
